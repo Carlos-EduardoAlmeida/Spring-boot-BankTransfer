@@ -14,15 +14,15 @@ import java.math.BigDecimal;
 @EqualsAndHashCode(of="id")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private String id;
     private String firstName;
     private String lastName;
     @Column(unique = true)
     private String document;
     @Column(unique = true)
     private String email;
-    //private String password
+    private String password;
     private BigDecimal balance;
     @Enumerated(EnumType.STRING)
     private UserType userType;

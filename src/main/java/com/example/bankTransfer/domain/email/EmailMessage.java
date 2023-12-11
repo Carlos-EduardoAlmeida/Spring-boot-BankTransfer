@@ -1,14 +1,20 @@
 package com.example.bankTransfer.domain.email;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
 @Data
-@Entity
+@Entity(name = "TB_EMAIL")
 @Table(name = "TB_EMAIL")
-public class Email {
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Component
+public class EmailMessage {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long emailId;
