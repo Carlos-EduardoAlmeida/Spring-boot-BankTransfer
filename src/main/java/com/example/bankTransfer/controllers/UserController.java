@@ -24,7 +24,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody LoginDto data) throws Exception {
+    public ResponseEntity<User> login(@RequestBody LoginDto data) throws Exception {
         return ResponseEntity.ok(userService.findUserByEmailAndPassword(data.email(), data.password()));
     }
 

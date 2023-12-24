@@ -27,9 +27,9 @@ public class UserService {
         return this.userRepository.save(newUser);
     }
 
-    public String findUserByEmailAndPassword(String email, String password) throws Exception {
+    public User findUserByEmailAndPassword(String email, String password) throws Exception {
         Optional<User> findUser = this.userRepository.findUserByEmailAndPassword(email, password);
-        return findUser.get().getId();
+        return findUser.orElse(null);
     }
 
     public void saveUser(User user){
